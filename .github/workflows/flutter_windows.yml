@@ -19,7 +19,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.16.2'  # 使用最新版本的Flutter
+          flutter-version: '3.16.2'
 
       - name: Install dependencies
         run: flutter pub get
@@ -31,7 +31,7 @@ jobs:
         run: flutter build windows --release
 
       - name: Archive Build Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3  # 更新为v3
         with:
           name: windows-build
           path: build\windows\runner\Release\*.exe  # 上传构建的可执行文件
